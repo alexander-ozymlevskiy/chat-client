@@ -1,10 +1,7 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
-import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import EmojiPicker from "emoji-picker-react";
-
 import icon from "../images/emoji.svg";
 import styles from "../styles/Chat.module.css";
 import Messages from "./Messages";
@@ -19,6 +16,7 @@ const Chat = () => {
   const [message, setMessage] = useState("");
   const [isOpen, setOpen] = useState(false);
   const [users, setUsers] = useState(0);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     const searchParams = Object.fromEntries(new URLSearchParams(search));
@@ -29,6 +27,7 @@ const Chat = () => {
   useEffect(() => {
     socket.on("message", ({ data }) => {
       setState((_state) => [..._state, data]);
+      scrollToBottom();
     });
   }, []);
 
@@ -55,6 +54,11 @@ const Chat = () => {
     setMessage("");
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  };
+  
+
   const onEmojiClick = ({ emoji }) => setMessage(`${message} ${emoji}`);
 
   return (
@@ -69,6 +73,7 @@ const Chat = () => {
 
       <div className={styles.messages}>
         <Messages messages={state} name={params.name} />
+        <div ref={messagesEndRef} />
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -85,7 +90,6 @@ const Chat = () => {
         </div>
         <div className={styles.emoji}>
           <img src={icon} alt="" onClick={() => setOpen(!isOpen)} />
-
           {isOpen && (
             <div className={styles.emojies}>
               <EmojiPicker onEmojiClick={onEmojiClick} />
