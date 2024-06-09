@@ -1,63 +1,72 @@
 body {
-    background-image: url('../images/backgr_01.jpeg');
-    background-size: cover;
-    background-position: center;   
-    background-repeat: no-repeat;   
-    background-attachment: fixed;  
-    font-size: 16px;
-    font-family: Rubik, Roboto, sans-serif;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    color: rgb(48, 43, 43);
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  input,
-  button {
-    border: none;
-    background: none;
-    outline: none;
-    color: rgb(48, 43, 43);
-    font-size: 16px;
-    font-family: Rubik, Roboto, sans-serif;
-  }
-  
-  a {
-    color: rgb(48, 43, 43);
-    text-decoration: none;
-  }
-  
-  ul,
-  li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
+  background-image: url('../images/backgr_01.jpeg');
+  background-size: cover;
+  background-position: center;   
+  background-repeat: no-repeat;   
+  background-attachment: fixed;  
+  font-size: 16px;
+  font-family: Rubik, Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+  color: rgb(48, 43, 43);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, button {
+  border: none;
+  background: none;
+  outline: none;
+  color: rgb(48, 43, 43);
+  font-size: 16px;
+  font-family: Rubik, Roboto, sans-serif;
+}
+
+a {
+  color: rgb(48, 43, 43);
+  text-decoration: none;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 0 20px; /* Добавляем внутренние отступы */
+}
+
+@media (max-width: 768px) {
   .container {
-    width: 1240px;
-    margin: 0 auto;
-    min-height: 100vh;
+    padding: 0 10px;
   }
+
+  .header, .form, .messages {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 5px;
+  }
+
+  .header, .form, .messages {
+    padding: 0 5px;
+  }
+}
