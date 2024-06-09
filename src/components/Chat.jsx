@@ -9,7 +9,7 @@ import icon from "../images/emoji.svg";
 import styles from "../styles/Chat.module.css";
 import Messages from "./Messages";
 
-const socket = io.connect("https://online-chat-igwx.onrender.com");
+const socket = io.connect("https://chat-server-9d38.onrender.com");
 
 const Chat = () => {
   const { search } = useLocation();
