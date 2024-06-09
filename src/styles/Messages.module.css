@@ -5,7 +5,6 @@
 }
 
 .message {
-  width: max-content;
   display: flex;
   flex-direction: column;
   row-gap: 5px;
@@ -22,9 +21,6 @@
 .user {
   font-size: 14px;
   color: rgb(176, 176, 176);
-}
-
-.user {
   align-items: flex-start;
 }
 
@@ -46,4 +42,27 @@
 
 .me .user {
   padding-right: 10px;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  .text {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .user {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .user {
+    font-size: 12px;
+  }
 }

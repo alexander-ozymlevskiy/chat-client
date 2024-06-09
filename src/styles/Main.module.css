@@ -56,3 +56,47 @@
 .button:hover {
   background: #dcdcdc; 
 }
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .group {
+    min-width: 260px;
+    height: 40px;
+  }
+
+  .input {
+    font-size: 14px;
+    text-indent: 15px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .group {
+    min-width: 200px;
+    height: 36px;
+  }
+
+  .input {
+    font-size: 12px;
+    text-indent: 10px;
+  }
+
+  .button {
+    font-size: 12px;
+  }
+}
+
