@@ -11,6 +11,8 @@ import Messages from "./Messages";
 
 const socket = io.connect("https://online-chat-igwx.onrender.com");
 
+console.log()
+
 const Chat = () => {
   const { search } = useLocation();
   const navigate = useNavigate();
